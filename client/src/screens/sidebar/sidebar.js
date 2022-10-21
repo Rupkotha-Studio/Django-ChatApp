@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import "./sidebar.css";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import CookieUtil from "../../util/cookieUtil";
-import AppPaths from "../../lib/appPaths";
 import ApiConnector from "../../api/apiConnector";
 import ApiEndpoints from "../../api/apiEndpoints";
-import CommonUtil from "../../util/commonUtil";
+import AppPaths from "../../lib/appPaths";
 import Constants from "../../lib/constants";
+import CommonUtil from "../../util/commonUtil";
+import CookieUtil from "../../util/cookieUtil";
 import Modal from "../modal/modal";
+import "./sidebar.css";
 
 const Sidebar = (props) => {
   const [chatUsers, setChatUsers] = useState([]); //sidebar users
@@ -108,7 +108,7 @@ const Sidebar = (props) => {
           onClick={addPeopleClickHandler}
           className="btn btn-outline-warning btn-block my-1 mt-4"
         >
-          Add People
+          Add Friends
         </button>
       </div>
       <div className="user-list-container">
@@ -188,7 +188,7 @@ const Sidebar = (props) => {
             </div>
           ))
         ) : (
-          <h3>No More User Found</h3>
+          <h3 className="text-danger">Not Available User</h3>
         )}
       </Modal>
     </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import ApiConnector from "../../../api/apiConnector";
@@ -45,10 +44,12 @@ const LoginScreen = ({ location }) => {
   };
 
   return (
-    <div id="authFormContainer">
+    
+    <div id="authFormContainer" style={{}}>
+    
       <div id="authForm">
         {getLoginMessage()}
-        <h2 id="authTitle">Login</h2>
+        <h2 id="authTitle" >Login</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="authFieldContainer">
             <input
@@ -73,7 +74,7 @@ const LoginScreen = ({ location }) => {
             )}
           </div>
           <br />
-          <button className="btn btn-outline-warning btn-block" type="submit">
+          <button className="btn btn-outline-warning btn-block " type="submit">
             Login
           </button>
         </form>
@@ -81,8 +82,10 @@ const LoginScreen = ({ location }) => {
           Don't have any account! <Link to="/signup">Click here</Link> to
           singup.
         </p>
+      
       </div>
     </div>
+    
   );
 };
 
